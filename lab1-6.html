@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh"> 
+  <head> 
+    <meta charset="UTF-8">
+    <title>评论区</title>
+        <style>
+      /* 页面整体样式 */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0 20px;
+      }
+
+      h1,
+      h2 {
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      /* 评论区样式 */
+      div {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 10px auto;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      b {
+        color: #333;
+      }
+
+      hr {
+        border: 1px solid #ddd;
+        margin: 20px 0;
+      }
+
+      /* 表单样式 */
+      form {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      fieldset {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      legend {
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 0 10px;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      textarea,
+      select {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #218838;
+      }
+
+      /* 复选框样式 */
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>评论区</h1>
+    <h2>已有评论</h2>
+    <div>
+      <p><b>用户1：</b>这是应该非常有趣的帖子！</p>
+      <p><b>用户2：</b>我完全同意上面的评论。</p>
+      <p><b>用户3：</b>感谢分享这个内容！</p>
+    </div>
+    <hr>
+    <form action="/submit-comment" method="post">
+      <!-- 创建一个字段集，用于提交评论表单 -->
+      <!-- fieldset标签创建一个字段集——表单内容分组，legend标签创建一个字段集的标题 -->
+      <fieldset>
+        <legend>提交新评论</legend>
+        <label for="username">昵称：<input type="text" id="username" name="username" maxlength="10" placeholder="请输入用户名" required></label>
+        
+        <label for="comment">评论内容：<textarea id="comment" name="comment" placeholder="请输入评论内容" maxlength="500" rows="4" cols="50" required></textarea></label>
+        <!-- 创建一个下拉菜单，用于选择评论的分类 -->
+        <label>评论类别：
+          <select id="category" name="category">
+            <option value="问题">问题</option>
+            <option value="建议">建议</option>
+            <option value="反馈">反馈</option>
+          </select>
+        </label>
+
+        <label>
+          <input type="checkbox" id="age_confirm" name="agree"  required>
+          <span>我确认我是18岁以上</span>
+        </label>
+        <label>
+          <input type="submit" value="提交评论">
+        </label>
+        
+      </fieldset>
+    </form>
+  </body>
+</html>
